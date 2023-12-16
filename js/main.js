@@ -10,7 +10,11 @@ const words = ["father", "mother", "chicken",];
 
 
 /*----- cached elements  -----*/
+const livesElem = document.getElementById('lives');
+const wordElem = document.getElementById('word');
 const keyElem = document.getElementById('keyboard');
+const msgBox = document.getElementById('endGameMessage')
+
 
 
 /*----- event listeners -----*/
@@ -81,8 +85,7 @@ function getWord() {
 
 
 
-// Update the displayed word
-function guessedWord() {}
+
 
 
 
