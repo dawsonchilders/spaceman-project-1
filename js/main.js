@@ -73,6 +73,14 @@ function renderGuess(letter) {
 }
 
 
+// Get displayed word
+
+function getWord() {
+  return charArray.map(letter => guessed.includes(letter.toLowerCase()) ? letter.toLowerCase() : '_').join(' ');
+} 
+
+
+
 // Update the displayed word
 function guessedWord() {}
 
