@@ -24,11 +24,21 @@ init();
 function init() {
   answer = '';
   guessed = [];
+  charArray = [];
   lives = 6;
   renderWord();
-  keyboardListeners();
+  keyboardListener();
+
   render();
 }
+
+// Render the current state to the DOM
+render()
+function render() {
+  
+}
+
+
 
 // Function to pick a random word
 
@@ -40,7 +50,7 @@ function renderWord() {
 
 // Set up keyboard listeners
 
-function keyboardListeners() {
+function keyboardListener() {
   keyElem.addEventListener('click', function(evt) {
     if (evt.target.matches('.key')) {
       renderGuess(evt.target.textContent);
@@ -63,15 +73,6 @@ function renderGuess(letter) {
 }
 
 
-
-// Render the current state to the DOM
-
-function render() {
-  
-}
-
-
-
 // Update the displayed word
 function guessedWord() {}
 
@@ -80,27 +81,10 @@ function guessedWord() {}
 
 
 
-// Update the lives
-
-function livesLeft() {}
 
 
 
 
-// Get the displayed word
-
-function getWord() {}
-
-
-
-// Check for win/lose
-
-function winOrLose() {}
-
-
-// Handle end of game
-
-function gameOver() {}
 
 
 
