@@ -38,7 +38,18 @@ function renderWord() {
 }
 
 
-
+function guessedWord() {
+  let wordStatus = '';
+  for (let i = 0; i < randomWord.length; i++) {
+  let letter = randomWord[i];
+  if (guessed.indexOf(letter.toLowerCase()) >= 0) {
+  wordStatus += letter.toLowerCase();
+  } else {
+  wordStatus += ' _ ';
+  }
+  }
+  document.getElementById('word').innerHTML = wordStatus;
+}
 
 
 

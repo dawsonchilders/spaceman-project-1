@@ -11,5 +11,38 @@ body {
     align-items: center;    
 }
 
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 31em;
+  }
 
+.key {
+    background-color: lime;
+    opacity: 0.8;
+    color: black;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10%;
+    transition: all 0.2s;
+  }
 
+  .key:hover {
+    background-color: #FF69B4;
+    cursor: pointer;
+  }
+
+  .key:active {
+    transform: scale(0.9);
+  }
+
+  .key.reset {
+    transform: scale(1);
+  }
