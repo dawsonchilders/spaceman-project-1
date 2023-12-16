@@ -1,5 +1,5 @@
 /*----- constants -----*/
-
+const words = ["father", "mother", "chicken",];
 
   /*----- state variables -----*/
 let answer;
@@ -9,14 +9,14 @@ let livesLeft;
 
 
 
-  /*----- cached elements  -----*/
+/*----- cached elements  -----*/
 
 
-  /*----- event listeners -----*/
+/*----- event listeners -----*/
 
 
-  /*----- functions -----*/
- init();
+/*----- functions -----*/
+init();
 
 function init() {
   answer = '';
@@ -28,5 +28,17 @@ function init() {
 
 
 function render() {
-  
+  renderWord();
 }
+
+
+function renderWord() {
+  answer = words[Math.floor(Math.random() * words.length)];
+  randomWord = answer.split('');
+}
+
+
+
+
+
+
