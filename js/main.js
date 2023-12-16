@@ -16,11 +16,17 @@ let livesLeft;
 
 
   /*----- functions -----*/
-
+ init();
 
 function init() {
   answer = '';
   wordGuessed = [];
   let randomWord = [];
   livesLeft = 6;
+  render();
+}
+
+
+function render() {
+  
 }
