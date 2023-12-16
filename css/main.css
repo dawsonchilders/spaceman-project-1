@@ -13,7 +13,7 @@ body {
 
 h1 {
    font-family: 'Orbitron', sans-serif;
-   font-size: 20px;
+   font-size: 40px;
    display: flex;
    justify-content: center;
    
@@ -22,7 +22,7 @@ h1 {
 p {
   color: purple;
   font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
+  font-size: 30px;
   display: flex;
   justify-content: center;
 }
@@ -33,14 +33,15 @@ p {
     align-items: center;
     justify-content: center;
     padding-top: 31em;
+    padding-bottom: 30px;
   }
 
 .key {
     background-color: lime;
     opacity: 0.8;
     color: black;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     font-family: 'Orbitron', sans-serif;
     font-size: 16px;
     font-weight: bold;

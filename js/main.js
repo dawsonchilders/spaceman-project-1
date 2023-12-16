@@ -10,7 +10,7 @@ let lives;
 
 
 /*----- cached elements  -----*/
-
+const livesElem = document.getElementById('lives');
 
 /*----- event listeners -----*/
 
@@ -29,6 +29,9 @@ function init() {
 
 function render() {
   renderWord();
+  updateLives();
+  guessedWord();
+  
 }
 
 
@@ -37,8 +40,8 @@ function renderWord() {
   randomWord = answer.split('');
 }
 
-
-
-
+function updateLives() {
+  livesElem.innerHTML = `You have <span>${lives}</span> ${lives === 1 ? 'life' : 'lives'} left${lives === 0 ? '!' : ''}`;
+}
 
 
