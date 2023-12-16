@@ -10,7 +10,7 @@ const words = ["father", "mother", "chicken",];
 
 
 /*----- cached elements  -----*/
-
+const keyElem = document.getElementById('keyboard');
 
 
 /*----- event listeners -----*/
@@ -26,6 +26,7 @@ function init() {
   guessed = [];
   lives = 6;
   renderWord();
+  keyboardListeners();
   render();
 }
 
@@ -39,45 +40,67 @@ function renderWord() {
 
 // Set up keyboard listeners
 
-
-
+function keyboardListeners() {
+  keyElem.addEventListener('click', function(evt) {
+    if (evt.target.matches('.key')) {
+      renderGuess(evt.target.textContent);
+      evt.target.disabled = true;
+    }
+  })
+}
 
 
 // Process a guessed letter
 
-
+function renderGuess(letter) {
+  if (!guessed.includes(letter.toLowerCase())) {
+    guessed.push(letter.toLowerCase());
+    if (!answer.includes(letter.toLowerCase())) {
+      lives --;
+    }
+    render();
+  }
+}
 
 
 
 // Render the current state to the DOM
 
 function render() {
-  renderWord();
+  
 }
+
+
+
+// Update the displayed word
+function guessedWord() {}
+
+
+
 
 
 
 // Update the lives
 
-
+function livesLeft() {}
 
 
 
 
 // Get the displayed word
 
-
+function getWord() {}
 
 
 
 // Check for win/lose
 
-
+function winOrLose() {}
 
 
 // Handle end of game
 
-
+function gameOver() {}
 
 
 
