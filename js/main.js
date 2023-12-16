@@ -3,9 +3,9 @@ const words = ["father", "mother", "chicken",];
 
   /*----- state variables -----*/
 let answer;
-let wordGuessed;
-let randomWord;
-let livesLeft;
+let guessed;
+let charArray;
+let lives;
 
 
 
@@ -20,9 +20,9 @@ init();
 
 function init() {
   answer = '';
-  wordGuessed = [];
-  let randomWord = [];
-  livesLeft = 6;
+  guessed = [];
+  let charArray = [];
+  lives = 6;
   render();
 }
 
@@ -38,18 +38,7 @@ function renderWord() {
 }
 
 
-function guessedWord() {
-  let wordStatus = '';
-  for (let i = 0; i < randomWord.length; i++) {
-  let letter = randomWord[i];
-  if (guessed.indexOf(letter.toLowerCase()) >= 0) {
-  wordStatus += letter.toLowerCase();
-  } else {
-  wordStatus += ' _ ';
-  }
-  }
-  document.getElementById('word').innerHTML = wordStatus;
-}
+
 
 
 
