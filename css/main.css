@@ -11,6 +11,22 @@ body {
     align-items: center;    
 }
 
+h1 {
+   font-family: 'Orbitron', sans-serif;
+   font-size: 20px;
+   display: flex;
+   justify-content: center;
+   
+}
+
+p {
+  color: purple;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 #keyboard {
     display: flex;
     flex-direction: column;
@@ -25,6 +41,7 @@ body {
     color: black;
     width: 50px;
     height: 50px;
+    font-family: 'Orbitron', sans-serif;
     font-size: 16px;
     font-weight: bold;
     margin: 2px;
