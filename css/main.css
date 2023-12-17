@@ -3,64 +3,94 @@
 }
 
 body {
-    height: 100vh;
-    flex-direction: column;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
 }
 
 h1 {
-   font-family: 'Orbitron', sans-serif;
-   font-size: 40px;
-   display: flex;
-   justify-content: center;
-   
+    color: #333;
 }
 
-p {
-  color: purple;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
+#lives {
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+#word {
+    margin: 20px 0;
+    font-size: 2em;
+    letter-spacing: 15px;
 }
 
 #keyboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 31em;
-    padding-bottom: 30px;
-  }
+    display: inline-block;
+    margin: 20px 0;
+}
 
 .key {
-    background-color: lime;
-    opacity: 0.8;
-    color: black;
-    width: 60px;
-    height: 60px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 2px;
+    background-color: green;
     border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 10%;
-    transition: all 0.2s;
-  }
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-  .key:hover {
-    background-color: #FF69B4;
+.key:hover {
+    background-color: #45a049;
+}
+
+.key:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: default;
+}
+
+#endGameMessage {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: black;
+    color: neonpink;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    border: 2px solid neonpink;
+    box-shadow: 0 0 10px neonpink;
+}
+
+#endGameMessage span {
+    color: neonpink;
+    font-weight: bold;
+    text-shadow: 0 0 10px neonpink;
+}
+
+#restartButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: neonpink;
+    color: black;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-  }
+    font-size: 1em;
+}
 
-  .key:active {
-    transform: scale(0.9);
-  }
-
-  .key.reset {
-    transform: scale(1);
-  }
+#restartButton:hover {
+    background-color: #ff66cc;
+}
