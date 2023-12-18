@@ -3,18 +3,20 @@
 }
 
 body {
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
     text-align: center;
     background-color: #484041;
     padding: 200px;
 }
 
 h1 {
+    font-family: 'Orbitron', sans-serif;
     color: lime;
     font-size: 5em;
 }
 
 p {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
 }
 
@@ -25,8 +27,10 @@ p {
 }
 
 #word {
+    font-family: 'Orbitron', sans-serif;
     margin: 20px 0;
     font-size: 2em;
+    color: lime;
 }
 
 #keyboard {
@@ -58,6 +62,7 @@ p {
 }
 
 #endGameMessage {
+    font-family: 'Orbitron', sans-serif;
     background-color: black;
     text-align: center;
     padding: 20px;
@@ -66,6 +71,7 @@ p {
 }
 
 #endGameMessage span {
+    
     color: neonpink;
     font-weight: bold;
     color: #ff66cc; 
@@ -73,6 +79,7 @@ p {
 }
 
 #restartButton {
+    font-family: 'Orbitron', sans-serif;
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -83,5 +90,6 @@ p {
 }
 
 #restartButton:hover {
+    
     background-color: #ff66cc;
 }

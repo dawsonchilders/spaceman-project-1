@@ -36,7 +36,7 @@ function init() {
 
 function render() {
     renderLives();
-    updateDisplayedWord();
+    renderDisplayedWord();
     checkForWin();
 }
 
@@ -69,14 +69,14 @@ function handleGuess(letter) {
 }
 
 function renderLives() {
-    livesElem.innerHTML = `lives: ${lives}`;
+    livesElem.innerHTML = `<span style="color: black">lives:</span> ${lives}`;
     if (lives === 0) {
         revealAnswer();
         showEndGameMessage(false);
     }
 }
 
-function updateDisplayedWord() {
+function renderDisplayedWord() {
   wordElem.textContent = charArray.map(letter => guessedLetters.includes(letter) ? letter.toLowerCase() : '_').join(' ');
 }
 
