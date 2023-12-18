@@ -24,8 +24,10 @@ function init() {
     charArray = [];
     lives = 6;
     keyboardListener();
-    render();
     renderWord();
+    renderKeys();
+    render();
+    
 }
 
 
@@ -33,8 +35,7 @@ function init() {
 function render() {
     renderLives();
     updateDisplayedWord();
-    checkForWin();
-    renderKeys();
+    
 }
 
 function renderWord() {
@@ -62,6 +63,7 @@ function handleGuess(letter) {
             lives--;
         }
         render();
+        checkForWin();
     }
 }
 
