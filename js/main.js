@@ -1,12 +1,14 @@
 /*----- constants -----*/
 /*--ADD REST OF WORDS WHEN GAME IS FINISHED!!!--*/
-const words = ["father", "mother", "chicken"];
+const words = ["lunar", "rocket", "quasar"];
 
 /*----- state variables -----*/
 let answer;
 let guessedLetters;
 let charArray;
 let lives;
+let isGameActive;
+
 
 /*----- cached elements  -----*/
 const livesElem = document.getElementById('lives');
@@ -22,12 +24,12 @@ function init() {
     answer = '';
     guessedLetters = [];
     charArray = [];
-    lives = 6;
+    lives = 10;
+    isGameActive = true;
+    chooseWord();
     keyboardListener();
-    renderWord();
-    renderKeys();
+    enableAllKeys();
     render();
-    
 }
 
 
@@ -35,24 +37,24 @@ function init() {
 function render() {
     renderLives();
     updateDisplayedWord();
-    
+    checkForWin();
 }
 
-function renderWord() {
+function chooseWord() {
     answer = words[Math.floor(Math.random() * words.length)];
     charArray = answer.split('');
 }
 
 function keyboardListener() {
   keyElem.addEventListener('click', function(evt) {
-      if (evt.target.matches('.key')) {
+      if (isGameActive && evt.target.matches('.key')) {
           handleGuess(evt.target.textContent);
           evt.target.disabled = true;
       }
   });
 }
 
-function renderKeys() {
+function enableAllKeys() {
     document.querySelectorAll('#keyboard .key').forEach(key => key.disabled = false);
 }
 
@@ -63,12 +65,11 @@ function handleGuess(letter) {
             lives--;
         }
         render();
-        checkForWin();
     }
 }
 
 function renderLives() {
-    livesElem.innerHTML = `Lives: ${lives}`;
+    livesElem.innerHTML = `lives: ${lives}`;
     if (lives === 0) {
         revealAnswer();
         showEndGameMessage(false);
@@ -81,11 +82,13 @@ function updateDisplayedWord() {
 
 function checkForWin() {
 if (charArray.every(letter => guessedLetters.includes(letter))) {
+    isGameActive = false;
     showEndGameMessage(true);
 }
 }
-    
+
 function showEndGameMessage(won) {
+  isGameActive = false;
   const messageText = won ? 'Congratulations, you won!' : `You Lose, the word was: ${answer}`;
   const endGameText = document.getElementById('endGameText');
   endGameText.textContent = messageText;

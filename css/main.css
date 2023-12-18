@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background-color: #484041;
+    padding: 200px;
+}
+
+h1 {
+    color: lime;
+    font-size: 5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+#lives {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: lime;
+}
+
+#word {
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+#keyboard {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.key {
+    background-color: lime;
+    border: none;
+    color: #f038ff;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 5px;
+   
+}
+
+.key:hover {
+    background-color: #ff66cc;
+}
+
+.key:disabled {
+    background-color: purple;
+    color: black;
+}
+
+#endGameMessage {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+#endGameMessage span {
+    color: neonpink;
+    font-weight: bold;
+    color: #ff66cc; 
+    
+}
+
+#restartButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#restartButton:hover {
+    background-color: #ff66cc;
+}
