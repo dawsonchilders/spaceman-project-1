@@ -69,7 +69,7 @@ function handleGuess(letter) {
 }
 
 function renderLives() {
-    livesElem.innerHTML = `<span style="color: black">lives:</span> ${lives}`;
+    livesElem.innerHTML = `<span style="color: lime">lives:</span> ${lives}`;
     if (lives === 0) {
         revealAnswer();
         showEndGameMessage(false);

@@ -8,7 +8,7 @@ body {
     height: 100vh;
     background-size: cover;
     background-position:center center;
-    background-image: url("../imgs/background.jpg");
+    background-image: url("../imgs/game_background.jpg");
 
     /* background-color: #484041; */
 
@@ -18,6 +18,7 @@ body {
 
 h1 {
     font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px black;
     color: lime;
     font-size: 5em;
 }
@@ -25,12 +26,13 @@ h1 {
 p {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
+    color: lime
 }
 
 #lives {
     margin: 20px 0;
     font-size: 1.5em;
-    color: lime;
+    color: red;
 }
 
 #word {
@@ -70,6 +72,10 @@ p {
 
 #endGameMessage {
     font-family: 'Orbitron', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: black;
     text-align: center;
     padding: 20px;
