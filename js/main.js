@@ -114,12 +114,10 @@ function showEndGameMessage(won) {
   const endGameText = document.getElementById('endGameText');
   endGameText.textContent = messageText;
   msgBox.style.display = 'block';
-  gameMusic.pause();
-
   document.getElementById('restartButton').addEventListener('click', function() {
       msgBox.style.display = 'none';
       endGameButtonSound.play();
-
+      gameMusic.pause();
       init();
   });
 }
