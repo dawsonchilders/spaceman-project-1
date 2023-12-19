@@ -1,7 +1,10 @@
 /*----- constants -----*/
 /*--ADD REST OF WORDS WHEN GAME IS FINISHED!!!--*/
 const words = ["lunar", "rocket", "quasar"];
-const keyPressSound = new Audio('audio/click.wav')
+const keyboardSound = new Audio('audio/click.wav');
+const gameMusic = new Audio('audio/bckgrnd.flac');
+// gameMusic.loop = true;
+
 
 /*----- state variables -----*/
 let answer;
@@ -16,6 +19,11 @@ const livesElem = document.getElementById('lives');
 const wordElem = document.getElementById('word');
 const keyElem = document.getElementById('keyboard');
 const msgBox = document.getElementById('endGameMessage');
+
+
+/*----- event listeners  -----*/
+
+document.getElementById('gameMusic').addEventListener('click', toggleMusic);
 
 
 /*----- functions -----*/
@@ -41,6 +49,17 @@ function render() {
     checkForWin();
 }
 
+function toggleMusic() {
+  gameMusic.loop = true;
+  if (gameMusic.paused) {
+    gameMusic.play();
+  } else {
+    gameMusic.pause();
+  }
+
+}
+
+
 function chooseWord() {
     answer = words[Math.floor(Math.random() * words.length)];
     charArray = answer.split('');
@@ -49,7 +68,7 @@ function chooseWord() {
 function keyboardListener() {
   keyElem.addEventListener('click', function(evt) {
       if (isGameActive && evt.target.matches('.key')) {
-        keyPressSound.play();
+        keyboardSound.play();
           handleGuess(evt.target.textContent);
           evt.target.disabled = true;
       }
