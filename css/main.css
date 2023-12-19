@@ -18,7 +18,7 @@ body {
 
 h1 {
     font-family: 'Orbitron', sans-serif;
-    text-shadow: 4px 4px black;
+    text-shadow: 6px 6px black;
     color: lime;
     font-size: 5em;
 }
@@ -26,12 +26,14 @@ h1 {
 p {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
+    text-shadow: 4px 4px black ;
     color: lime
 }
 
 #lives {
     margin: 20px 0;
     font-size: 1.5em;
+    text-shadow: 4px 4px black; 
     color: red;
 }
 
@@ -39,6 +41,7 @@ p {
     font-family: 'Orbitron', sans-serif;
     margin: 20px 0;
     font-size: 2em;
+    text-shadow: 4px 4px black;
     color: lime;
 }
 

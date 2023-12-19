@@ -1,6 +1,7 @@
 /*----- constants -----*/
 /*--ADD REST OF WORDS WHEN GAME IS FINISHED!!!--*/
 const words = ["lunar", "rocket", "quasar"];
+const keyPressSound = new Audio('audio/click.wav')
 
 /*----- state variables -----*/
 let answer;
@@ -48,6 +49,7 @@ function chooseWord() {
 function keyboardListener() {
   keyElem.addEventListener('click', function(evt) {
       if (isGameActive && evt.target.matches('.key')) {
+        keyPressSound.play();
           handleGuess(evt.target.textContent);
           evt.target.disabled = true;
       }
