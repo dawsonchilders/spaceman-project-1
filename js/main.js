@@ -1,9 +1,9 @@
 /*----- constants -----*/
 /*--ADD REST OF WORDS WHEN GAME IS FINISHED!!!--*/
 const words = ["lunar", "rocket", "quasar"];
-const keyboardSound = new Audio('audio/click.wav');
+const keyboardSound = new Audio('audio/click2.wav');
 const gameMusic = new Audio('audio/bckgrnd.flac');
-// gameMusic.loop = true;
+
 
 
 /*----- state variables -----*/
@@ -56,7 +56,6 @@ function toggleMusic() {
   } else {
     gameMusic.pause();
   }
-
 }
 
 
@@ -105,7 +104,7 @@ function checkForWin() {
 if (charArray.every(letter => guessedLetters.includes(letter))) {
     isGameActive = false;
     showEndGameMessage(true);
-}
+  }
 }
 
 function showEndGameMessage(won) {
@@ -114,6 +113,7 @@ function showEndGameMessage(won) {
   const endGameText = document.getElementById('endGameText');
   endGameText.textContent = messageText;
   msgBox.style.display = 'block';
+  gameMusic.pause();
 
   document.getElementById('restartButton').addEventListener('click', function() {
       msgBox.style.display = 'none';
