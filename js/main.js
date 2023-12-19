@@ -3,6 +3,7 @@
 const words = ["lunar", "rocket", "quasar"];
 const keyboardSound = new Audio('audio/click2.wav');
 const gameMusic = new Audio('audio/bckgrnd.flac');
+const endGameButtonSound = new Audio('audio/click.wav');
 
 
 
@@ -117,6 +118,7 @@ function showEndGameMessage(won) {
 
   document.getElementById('restartButton').addEventListener('click', function() {
       msgBox.style.display = 'none';
+      endGameButtonSound.play();
 
       init();
   });
