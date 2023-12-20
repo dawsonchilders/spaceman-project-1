@@ -57,6 +57,7 @@ p {
     font-size: 20px;
     margin: 4px 2px;
     border-radius: 5px;
+    transition: background-color 0.5s ease;
 
 }
 
@@ -80,6 +81,7 @@ p {
     font-size: 20px;
     margin: 4px 2px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #gameMusic:hover {
@@ -101,8 +103,6 @@ p {
 }
 
 #endGameMessage span {
-
-    color: neonpink;
     font-weight: bold;
     color: #ff66cc;
 
@@ -113,6 +113,7 @@ p {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
+    background-color: lime;
     color: black;
     border: none;
     border-radius: 5px;
@@ -122,4 +123,5 @@ p {
 #restartButton:hover {
 
     background-color: #ff66cc;
+    transition: background-color 0.3s ease;
 }
