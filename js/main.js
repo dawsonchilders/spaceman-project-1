@@ -1,13 +1,16 @@
-/*----- constants -----*/
-/*--ADD REST OF WORDS WHEN GAME IS FINISHED!!!--*/
-const words = ["lunar", "rocket", "quasar"];
+const words = ["LUNAR", "ROCKET", "QUASAR", "SPACE", "STAR", "PLANET", "BOOSTER", "SATURN", "PLUTO", "NEPTUNE", "MARS", "EARTH", "VENUS"];
+
 const keyboardSound = new Audio('audio/click2.wav');
+keyboardSound.volume = 0.5;
+
 const gameMusic = new Audio('audio/bckgrnd.flac');
+gameMusic.loop = true;
+gameMusic.volume = 0.3;
+
 const endGameButtonSound = new Audio('audio/click.wav');
+endGameButtonSound.volume = 0.5;
 
 
-
-/*----- state variables -----*/
 let answer;
 let guessedLetters;
 let charArray;
@@ -15,7 +18,6 @@ let lives;
 let isGameActive;
 
 
-/*----- cached elements  -----*/
 const livesElem = document.getElementById('lives');
 const wordElem = document.getElementById('word');
 const keyElem = document.getElementById('keyboard');
@@ -23,12 +25,9 @@ const msgBox = document.getElementById('endGameMessage');
 const endGameText = document.getElementById('endGameText');
 
 
-/*----- event listeners  -----*/
-
 document.getElementById('gameMusic').addEventListener('click', toggleMusic);
 
 
-/*----- functions -----*/
 init();
 
 function init() {
@@ -43,8 +42,6 @@ function init() {
   render();
 }
 
-
-
 function render() {
   renderLives();
   renderDisplayedWord();
@@ -52,15 +49,12 @@ function render() {
 }
 
 function toggleMusic() {
-  gameMusic.loop = true;
-  gameMusic.volume = 0.3;
   if (gameMusic.paused) {
     gameMusic.play();
   } else {
     gameMusic.pause();
   }
 }
-
 
 function getSecretWord() {
   answer = words[Math.floor(Math.random() * words.length)];
@@ -71,7 +65,6 @@ function keyboardListener() {
   keyElem.addEventListener('click', function (evt) {
     if (isGameActive && evt.target.matches('.key')) {
       keyboardSound.play();
-      keyboardSound.volume = 0.5;
       handleGuess(evt.target.textContent);
       evt.target.disabled = true;
     }
@@ -83,9 +76,9 @@ function enableAllKeys() {
 }
 
 function handleGuess(letter) {
-  if (!guessedLetters.includes(letter.toLowerCase())) {
-    guessedLetters.push(letter.toLowerCase());
-    if (!answer.includes(letter.toLowerCase())) {
+  if (!guessedLetters.includes(letter.toUpperCase())) {
+    guessedLetters.push(letter.toUpperCase());
+    if (!answer.includes(letter.toUpperCase())) {
       lives--;
     }
     render();
@@ -101,7 +94,7 @@ function renderLives() {
 }
 
 function renderDisplayedWord() {
-  wordElem.textContent = charArray.map(letter => guessedLetters.includes(letter) ? letter.toLowerCase() : '_').join(' ');
+  wordElem.textContent = charArray.map(letter => guessedLetters.includes(letter) ? letter.toUpperCase() : '_').join(' ');
 }
 
 function checkForWin() {
@@ -119,7 +112,6 @@ function showEndGameMessage(won) {
   document.getElementById('restartButton').addEventListener('click', function () {
     msgBox.style.display = 'none';
     endGameButtonSound.play();
-    endGameButtonSound.volume = 0.5;
     gameMusic.pause();
     init();
   });
