@@ -3,11 +3,10 @@
 }
 
 body {
-    /* font-family: 'Orbitron', sans-serif; */
     text-align: center;
     height: 100%;
     background-size: cover;
-    background-position:center center;
+    background-position: center center;
     background-image: url("../imgs/game_background.jpg");
     padding: 200px;
 }
@@ -19,20 +18,20 @@ h1 {
     text-shadow: 6px 6px black;
     color: lime;
     font-size: 5em;
-    
+
 }
 
 p {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
-    text-shadow: 4px 4px black ;
+    text-shadow: 4px 4px black;
     color: lime
 }
 
 #lives {
     margin: 20px 0;
     font-size: 1.5em;
-    text-shadow: 4px 4px black; 
+    text-shadow: 4px 4px black;
     color: red;
 }
 
@@ -50,8 +49,6 @@ p {
 }
 
 .key {
-    /* display: flex;
-    flex-wrap: wrap; */
     background-color: lime;
     border: none;
     color: #f038ff;
@@ -62,7 +59,7 @@ p {
     font-size: 20px;
     margin: 4px 2px;
     border-radius: 5px;
-   
+
 }
 
 .key:hover {
@@ -106,11 +103,11 @@ p {
 }
 
 #endGameMessage span {
-    
+
     color: neonpink;
     font-weight: bold;
-    color: #ff66cc; 
-    
+    color: #ff66cc;
+
 }
 
 #restartButton {
@@ -125,6 +122,6 @@ p {
 }
 
 #restartButton:hover {
-    
+
     background-color: #ff66cc;
 }

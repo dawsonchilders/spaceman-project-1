@@ -20,6 +20,7 @@ const livesElem = document.getElementById('lives');
 const wordElem = document.getElementById('word');
 const keyElem = document.getElementById('keyboard');
 const msgBox = document.getElementById('endGameMessage');
+const endGameText = document.getElementById('endGameText');
 
 
 /*----- event listeners  -----*/
@@ -31,27 +32,28 @@ document.getElementById('gameMusic').addEventListener('click', toggleMusic);
 init();
 
 function init() {
-    answer = '';
-    guessedLetters = [];
-    charArray = [];
-    lives = 10;
-    isGameActive = true;
-    chooseWord();
-    keyboardListener();
-    enableAllKeys();
-    render();
+  answer = '';
+  guessedLetters = [];
+  charArray = [];
+  lives = 10;
+  isGameActive = true;
+  getSecretWord();
+  keyboardListener();
+  enableAllKeys();
+  render();
 }
 
 
 
 function render() {
-    renderLives();
-    renderDisplayedWord();
-    checkForWin();
+  renderLives();
+  renderDisplayedWord();
+  checkForWin();
 }
 
 function toggleMusic() {
   gameMusic.loop = true;
+  gameMusic.volume = 0.3;
   if (gameMusic.paused) {
     gameMusic.play();
   } else {
@@ -60,41 +62,42 @@ function toggleMusic() {
 }
 
 
-function chooseWord() {
-    answer = words[Math.floor(Math.random() * words.length)];
-    charArray = answer.split('');
+function getSecretWord() {
+  answer = words[Math.floor(Math.random() * words.length)];
+  charArray = answer.split('');
 }
 
 function keyboardListener() {
-  keyElem.addEventListener('click', function(evt) {
-      if (isGameActive && evt.target.matches('.key')) {
-        keyboardSound.play();
-          handleGuess(evt.target.textContent);
-          evt.target.disabled = true;
-      }
+  keyElem.addEventListener('click', function (evt) {
+    if (isGameActive && evt.target.matches('.key')) {
+      keyboardSound.play();
+      keyboardSound.volume = 0.5;
+      handleGuess(evt.target.textContent);
+      evt.target.disabled = true;
+    }
   });
 }
 
 function enableAllKeys() {
-    document.querySelectorAll('#keyboard .key').forEach(key => key.disabled = false);
+  document.querySelectorAll('#keyboard .key').forEach(key => key.disabled = false);
 }
 
 function handleGuess(letter) {
-    if (!guessedLetters.includes(letter.toLowerCase())) {
-        guessedLetters.push(letter.toLowerCase());
-        if (!answer.includes(letter.toLowerCase())) {
-            lives--;
-        }
-        render();
+  if (!guessedLetters.includes(letter.toLowerCase())) {
+    guessedLetters.push(letter.toLowerCase());
+    if (!answer.includes(letter.toLowerCase())) {
+      lives--;
     }
+    render();
+  }
 }
 
 function renderLives() {
-    livesElem.innerHTML = `<span style="color: lime">lives:</span> ${lives}`;
-    if (lives === 0) {
-        revealAnswer();
-        showEndGameMessage(false);
-    }
+  livesElem.innerHTML = `<span style="color: lime">lives:</span> ${lives}`;
+  if (lives === 0) {
+    revealAnswer();
+    showEndGameMessage(false);
+  }
 }
 
 function renderDisplayedWord() {
@@ -102,7 +105,7 @@ function renderDisplayedWord() {
 }
 
 function checkForWin() {
-if (charArray.every(letter => guessedLetters.includes(letter))) {
+  if (charArray.every(letter => guessedLetters.includes(letter))) {
     isGameActive = false;
     showEndGameMessage(true);
   }
@@ -111,14 +114,14 @@ if (charArray.every(letter => guessedLetters.includes(letter))) {
 function showEndGameMessage(won) {
   isGameActive = false;
   const messageText = won ? 'Congratulations, you won!' : `You Lose, the word was: ${answer}`;
-  const endGameText = document.getElementById('endGameText');
   endGameText.textContent = messageText;
   msgBox.style.display = 'block';
-  document.getElementById('restartButton').addEventListener('click', function() {
-      msgBox.style.display = 'none';
-      endGameButtonSound.play();
-      gameMusic.pause();
-      init();
+  document.getElementById('restartButton').addEventListener('click', function () {
+    msgBox.style.display = 'none';
+    endGameButtonSound.play();
+    endGameButtonSound.volume = 0.5;
+    gameMusic.pause();
+    init();
   });
 }
 
