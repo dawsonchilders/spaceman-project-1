@@ -11,14 +11,6 @@ body {
     padding: 200px;
 }
 
-.loseBackground {
-    background-image: url('../imgs/loseBackground');
-    background-size: cover;
-    background-position: center center;
-}
-
-
-
 h1 {
     font-family: 'Orbitron', sans-serif;
     text-shadow: 6px 6px black;
