@@ -1,4 +1,6 @@
-const words = ["LUNAR", "ROCKET", "QUASAR", "SPACE", "STAR", "PLANET", "BOOSTER", "SATURN", "PLUTO", "NEPTUNE", "MARS", "EARTH", "VENUS"];
+const words = ["LUNAR", "ROCKET", "QUASAR", "SPACE", "STAR", "PLANET", "BOOSTER", "SATURN",
+"PLUTO", "NEPTUNE", "MARS", "EARTH", "VENUS", "LASER", "JUPITER", "MERCURY", "URANUS", "COMET", 
+"ASTEROID"];
 
 const keyboardSound = new Audio('audio/click2.wav');
 keyboardSound.volume = 0.5;
