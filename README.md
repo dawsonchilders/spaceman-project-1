@@ -20,7 +20,7 @@
 
  # Getting Started
 
-
+Play [Spaceman](https://dawsonchilders.github.io/spaceman-project-1/)
 
 ## Next Steps:
 
@@ -29,6 +29,8 @@
 2. add more sound effects
 
 3. add a graphic element that changes as your lives decrease
+
+4. create seperate win and loss screens
 
 
 
