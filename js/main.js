@@ -1,6 +1,6 @@
 const words = ["LUNAR", "ROCKET", "QUASAR", "SPACE", "STAR", "PLANET", "BOOSTER", "SATURN",
-"PLUTO", "NEPTUNE", "MARS", "EARTH", "VENUS", "LASER", "JUPITER", "MERCURY", "URANUS", "COMET", 
-"ASTEROID"];
+  "PLUTO", "NEPTUNE", "MARS", "EARTH", "VENUS", "LASER", "JUPITER", "MERCURY", "URANUS", "COMET",
+  "ASTEROID"];
 
 const keyboardSound = new Audio('audio/click2.wav');
 keyboardSound.volume = 0.5;
@@ -12,13 +12,11 @@ gameMusic.volume = 0.3;
 const endGameButtonSound = new Audio('audio/click.wav');
 endGameButtonSound.volume = 0.5;
 
-
 let answer;
 let guessedLetters;
 let charArray;
 let lives;
 let isGameActive;
-
 
 const livesElem = document.getElementById('lives');
 const wordElem = document.getElementById('word');
@@ -26,9 +24,7 @@ const keyElem = document.getElementById('keyboard');
 const msgBox = document.getElementById('endGameMessage');
 const endGameText = document.getElementById('endGameText');
 
-
 document.getElementById('gameMusic').addEventListener('click', toggleMusic);
-
 
 init();
 
@@ -45,7 +41,7 @@ function init() {
 }
 
 function render() {
-  renderLives();
+  renderLivesLeft();
   renderDisplayedWord();
   checkForWin();
 }
@@ -87,7 +83,7 @@ function handleGuess(letter) {
   }
 }
 
-function renderLives() {
+function renderLivesLeft() {
   livesElem.innerHTML = `<span style="color: lime">lives:</span> ${lives}`;
   if (lives === 0) {
     revealAnswer();

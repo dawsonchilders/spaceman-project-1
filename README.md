@@ -21,7 +21,7 @@
 
 click the link to play [Spaceman](https://dawsonchilders.github.io/spaceman-project-1/)
 
-## Next Steps:
+# Next Steps:
 
 1. add a drop down menu with different word categories
 
