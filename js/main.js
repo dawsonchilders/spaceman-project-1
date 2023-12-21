@@ -36,7 +36,7 @@ function init() {
   charArray = [];
   lives = 10;
   isGameActive = true;
-  getSecretWord();
+  pickSecretWord();
   keyboardListener();
   enableAllKeys();
   render();
@@ -56,7 +56,7 @@ function toggleMusic() {
   }
 }
 
-function getSecretWord() {
+function pickSecretWord() {
   answer = words[Math.floor(Math.random() * words.length)];
   charArray = answer.split('');
 }

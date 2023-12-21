@@ -1,12 +1,11 @@
 # SPACEMAN 
-> Spaceman is a game where you have to guess the secret word before your lives run out and you lose.
+> Spaceman is a game where you have to guess the secret word. If your lives run out before you guess the secret word you lose!
 
 
 
 # Screenshot 
 
-![](imgs/screenshot.png)
-
+![](imgs/main_screen.png)
 
 
 
@@ -20,17 +19,19 @@
 
  # Getting Started
 
-Play [Spaceman](https://dawsonchilders.github.io/spaceman-project-1/)
+click the link to play [Spaceman](https://dawsonchilders.github.io/spaceman-project-1/)
 
 ## Next Steps:
 
 1. add a drop down menu with different word categories
 
-2. add more sound effects
+2. add a hint after a TBD amount of incorrect guesses 
 
-3. add a graphic element that changes as your lives decrease
+3. add more sound effects, and music - potentially change the music to something more intense when guesses reach a lower number
 
-4. create seperate win and loss screens
+4. add a graphic element that changes as your lives decrease
+
+5. create seperate win and loss screens to help create a narrative - for example, if you lose you are stranded on an alien planet, if you win you blast off on a rocket ship.
 
 
 
