@@ -1,5 +1,5 @@
 # SPACEMAN 
-> Spaceman is a game where you have to guess the secret word. If your lives run out before you guess the secret word you lose!
+> Spaceman is a game where you have to guess the secret, space themed, word. If your lives run out before you guess the secret word you lose!
 
 
 
@@ -20,6 +20,8 @@
  # Getting Started
 
 click the link to play [Spaceman](https://dawsonchilders.github.io/spaceman-project-1/)
+
+Hint: All secret words are related to outer space!
 
 # Next Steps:
 
