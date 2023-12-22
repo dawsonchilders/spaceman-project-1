@@ -88,7 +88,6 @@ function handleGuess(letter) {
 function renderLivesLeft() {
   livesElem.innerHTML = `<span style="color: lime">lives:</span> ${lives}`;
   if (lives === 0) {
-    revealAnswer();
     showEndGameMessage(false);
   }
 }
@@ -125,7 +124,5 @@ function showEndGameMessage(won) {
   });
 }
 
-function revealAnswer() {
-  wordElem.textContent = secretWord;
-}
+
 
