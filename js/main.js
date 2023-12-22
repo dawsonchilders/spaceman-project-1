@@ -12,7 +12,7 @@ gameMusic.volume = 0.3;
 const endGameButtonSound = new Audio('audio/click.wav');
 endGameButtonSound.volume = 0.5;
 
-let answer;
+let secretWord;
 let guessedLetters;
 let charArray;
 let lives;
@@ -29,7 +29,7 @@ document.getElementById('gameMusic').addEventListener('click', toggleMusic);
 init();
 
 function init() {
-  answer = '';
+  secretWord = '';
   guessedLetters = [];
   charArray = [];
   lives = 10;
@@ -55,8 +55,8 @@ function toggleMusic() {
 }
 
 function pickSecretWord() {
-  answer = words[Math.floor(Math.random() * words.length)];
-  charArray = answer.split('');
+  secretWord = words[Math.floor(Math.random() * words.length)];
+  charArray = secretWord.split('');
 }
 
 function keyboardListener() {
@@ -79,7 +79,7 @@ function enableAllKeys() {
 function handleGuess(letter) {
   if (!guessedLetters.includes(letter.toUpperCase())) {
     guessedLetters.push(letter.toUpperCase());
-    if (!answer.includes(letter.toUpperCase())) {
+    if (!secretWord.includes(letter.toUpperCase())) {
       lives--;
     }
     render();
@@ -115,7 +115,7 @@ function checkForWin() {
 
 function showEndGameMessage(won) {
   isGameActive = false;
-  const messageText = won ? 'Congratulations, you won!' : `You Lose, the word was: ${answer}`;
+  const messageText = won ? 'Congratulations, you won!' : `You Lose, the word was: ${secretWord}`;
   endGameText.textContent = messageText;
   msgBox.style.display = 'block';
   document.getElementById('restartButton').addEventListener('click', function () {
@@ -127,6 +127,6 @@ function showEndGameMessage(won) {
 }
 
 function revealAnswer() {
-  wordElem.textContent = answer;
+  wordElem.textContent = secretWord;
 }
 

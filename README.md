@@ -21,7 +21,7 @@
 
 click the link to play [Spaceman](https://dawsonchilders.github.io/spaceman-project-1/)
 
-Hint: All secret words are related to outer space!
+Hint: All secret words are related to outer-space!
 
 # Next Steps:
 
