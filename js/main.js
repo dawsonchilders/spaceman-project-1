@@ -70,7 +70,7 @@ function keyboardListener() {
 }
 
 function enableAllKeys() {
-  document.querySelectorAll('#keyboard .key').forEach(function(key) {
+  document.querySelectorAll('#keyboard .key').forEach(function (key) {
     key.disabled = false;
   });
 }
@@ -94,7 +94,7 @@ function renderLivesLeft() {
 }
 
 function renderDisplayedWord() {
-  wordElem.textContent = charArray.map(function(letter) {
+  wordElem.textContent = charArray.map(function (letter) {
     if (guessedLetters.includes(letter)) {
       return letter.toUpperCase();
     } else {
@@ -104,7 +104,7 @@ function renderDisplayedWord() {
 }
 
 function checkForWin() {
-  if (charArray.every(function(letter) {
+  if (charArray.every(function (letter) {
     return guessedLetters.includes(letter);
   })) {
     isGameActive = false;
