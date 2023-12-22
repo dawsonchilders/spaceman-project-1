@@ -31,9 +31,7 @@ Hint: All secret words are related to outer-space!
 
 3. add more sound effects, and music - potentially change the music to something more intense when guesses reach a lower number
 
-4. add a graphic element that changes as your lives decrease
-
-5. create seperate win and loss screens to help create a narrative - for example, if you lose you are stranded on an alien planet, if you win you blast off on a rocket ship.
+4. create seperate win and loss screens to help create a narrative - for example, if you lose you are stranded on an alien planet, if you win you blast off on a rocket ship.
 
 
 
