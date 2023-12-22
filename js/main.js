@@ -70,11 +70,8 @@ function keyboardListener() {
 }
 
 function enableAllKeys() {
-  document.querySelectorAll('#keyboard .key').forEach(function(key) {
-    key.disabled = false;
-  });
+  document.querySelectorAll('#keyboard .key').forEach(key => key.disabled = false);
 }
-
 
 function handleGuess(letter) {
   if (!guessedLetters.includes(letter.toUpperCase())) {
@@ -95,19 +92,11 @@ function renderLivesLeft() {
 }
 
 function renderDisplayedWord() {
-  wordElem.textContent = charArray.map(function(letter) {
-    if (guessedLetters.includes(letter)) {
-      return letter.toUpperCase();
-    } else {
-      return '_';
-    }
-  }).join(' ');
+  wordElem.textContent = charArray.map(letter => guessedLetters.includes(letter) ? letter.toUpperCase() : '_').join(' ');
 }
 
 function checkForWin() {
-  if (charArray.every(function(letter) {
-    return guessedLetters.includes(letter);
-  })) {
+  if (charArray.every(letter => guessedLetters.includes(letter))) {
     isGameActive = false;
     showEndGameMessage(true);
   }
